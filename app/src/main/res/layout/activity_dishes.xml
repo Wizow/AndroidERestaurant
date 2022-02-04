@@ -4,28 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C1BFBF"
+    android:backgroundTint="#3F4040"
     tools:context=".DishesActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/dish_recycle_view"
-        android:layout_width="410dp"
-        android:layout_height="621dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_dish_title" />
-
     <TextView
-        android:id="@+id/main_dish_title"
+        android:id="@+id/dishesTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="174dp"
-        android:layout_marginTop="61dp"
-        android:layout_marginEnd="169dp"
-        android:text="@string/dishes_main_dish_title"
+        android:layout_marginTop="50dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:textColor="#F8F6F6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#FBF9F9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dish_recycle_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#FCFBFBFB"
+        android:backgroundTint="#3F4040"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dishesTitle"
+        tools:listitem="@layout/card_view_design" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

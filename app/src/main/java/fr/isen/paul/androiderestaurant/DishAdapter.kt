@@ -9,7 +9,7 @@ import com.squareup.picasso.Picasso
 
 class DishAdapter(private val dishes: List<DishModel>, val onDishClicked : (DishModel) -> Unit) : RecyclerView.Adapter<DishAdapter.DishViewHolder>(){
 
-    class DishViewHolder(val binding: CardViewDesignBinding): RecyclerView.ViewHolder(binding.root){
+    class DishViewHolder(private val binding: CardViewDesignBinding): RecyclerView.ViewHolder(binding.root){
         val dishPicture = binding.dishPicture
         val dishName = binding.dishName
         val dishPrice = binding.dishPrice
@@ -22,7 +22,7 @@ class DishAdapter(private val dishes: List<DishModel>, val onDishClicked : (Dish
 
     override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
         val dish = dishes[position]
-        holder.dishName.text = dish.name
+        holder.dishName.text = dish.name_fr
 
         Picasso.get()
             .load(dishes[position].getFirstPicture())

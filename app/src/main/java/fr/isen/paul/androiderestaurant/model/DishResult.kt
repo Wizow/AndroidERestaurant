@@ -6,10 +6,10 @@ import java.io.Serializable
 
 data class DishResult(val data : List<Category>): Serializable
 
-data class Category (val name: String, val items: List<DishModel>): Serializable
+data class Category (val name_fr: String, val items: List<DishModel>): Serializable
 
 data class DishModel (
-    val name: String,
+    val name_fr: String,
     @SerializedName("images") val pictures: List<String>,
     val prices: List<Price>,
     val ingredients: List<Ingredient>
@@ -19,4 +19,4 @@ data class DishModel (
     fun getFormatedIngredients() = ingredients
 
     data class Price(val price: String): Serializable
-    data class Ingredient(val name: String): Serializable}
+    data class Ingredient(val name_fr: String): Serializable}

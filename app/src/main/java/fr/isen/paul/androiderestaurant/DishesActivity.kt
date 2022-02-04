@@ -14,7 +14,6 @@ import fr.isen.paul.androiderestaurant.databinding.ActivityDishesBinding
 import fr.isen.paul.androiderestaurant.model.DishModel
 import fr.isen.paul.androiderestaurant.model.DishResult
 import org.json.JSONObject
-import java.util.ArrayList
 
 class DishesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDishesBinding
@@ -24,7 +23,7 @@ class DishesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var categoryType = intent.getStringExtra("category_type")
-        binding.mainDishTitle.text = categoryType
+        binding.dishesTitle.text = categoryType
         if (categoryType != null) {
             loadDishesFromCategory(categoryType)
         }
@@ -42,23 +41,16 @@ class DishesActivity : AppCompatActivity() {
                 val gson = Gson()
                 val dishresult = gson.fromJson(response.toString(), DishResult::class.java)
 
-                displayDishes(dishresult.data.firstOrNull(){it.name==category}?.items ?: listOf())
+                displayDishes(dishresult.data.firstOrNull{it.name_fr==category}?.items ?: listOf())
             }, {
                 Log.e("DishActivity", "Erreur lors de la récupération de la liste des plats")
             })
 
-        request.retryPolicy = DefaultRetryPolicy(
-            DefaultRetryPolicy.DEFAULT_TIMEOUT_MS,
 
-            0,
-            1f
-        )
         queue.add(request)
     }
 
     private fun displayDishes(dishresult : List<DishModel>){
-
-        //}
         // getting the recyclerview by its id
         val recyclerview = binding.dishRecycleView
 
@@ -66,7 +58,7 @@ class DishesActivity : AppCompatActivity() {
         recyclerview.layoutManager = LinearLayoutManager(this)
 
         binding.dishRecycleView.layoutManager = LinearLayoutManager(this)
-        binding.dishRecycleView.adapter = DishAdapter(dishresult, ){
+        binding.dishRecycleView.adapter = DishAdapter(dishresult){
 
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("dish", it)
