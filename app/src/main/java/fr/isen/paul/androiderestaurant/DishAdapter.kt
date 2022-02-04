@@ -1,27 +1,39 @@
 package fr.isen.paul.androiderestaurant
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import fr.isen.paul.androiderestaurant.databinding.CardViewDesignBinding
+import fr.isen.paul.androiderestaurant.model.DishModel
+import com.squareup.picasso.Picasso
 
-class DishAdapter(val dishes: List<String>) : RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
+class DishAdapter(private val dishes: List<DishModel>, val onDishClicked : (DishModel) -> Unit) : RecyclerView.Adapter<DishAdapter.DishViewHolder>(){
 
-    class DishViewHolder(val view: View): RecyclerView.ViewHolder(view){
-        val textView: TextView = view.findViewById(R.id.dish_text_view)
+    class DishViewHolder(val binding: CardViewDesignBinding): RecyclerView.ViewHolder(binding.root){
+        val dishPicture = binding.dishPicture
+        val dishName = binding.dishName
+        val dishPrice = binding.dishPrice
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
-        // Create a new view, which defines the UI of the list item
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_view_design, parent, false)
-
-        return DishViewHolder(view)
+        val binding = CardViewDesignBinding
+            .inflate(LayoutInflater.from(parent.context), parent, false)
+        return DishViewHolder(binding)
     }
+
     override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
-        holder.textView.text = dishes[position]
+        val dish = dishes[position]
+        holder.dishName.text = dish.name
+
+        Picasso.get()
+            .load(dishes[position].getFirstPicture())
+            .placeholder(R.drawable.ic_launcher_foreground)
+            .into(holder.dishPicture)
+
+        holder.dishPrice.text = dishes[position].getFormatedPrice()
+
+        holder.itemView.setOnClickListener {
+            onDishClicked(dish)
+        }
     }
 
     override fun getItemCount(): Int = dishes.size
