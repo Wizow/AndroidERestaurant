@@ -26,6 +26,17 @@
         </activity>
         <activity
             android:name=".DetailActivity"
+            android:exported="false"
+            android:icon="@drawable/ic_launcher_foreground">
+        </activity>
+
+        <activity
+            android:name=".BasketActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".ConnectionActivity"
             android:exported="false">
         </activity>
     </application>

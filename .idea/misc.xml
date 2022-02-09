@@ -3,12 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/activity_basket.xml" value="0.24547101449275363" />
+        <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/activity_connection.xml" value="0.24547101449275363" />
         <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/activity_detail2.xml" value="0.24547101449275363" />
         <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/activity_dishes.xml" value="0.24010416666666667" />
         <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/basket_view.xml" value="0.24547101449275363" />
         <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/card_view_design.xml" value="0.24547101449275363" />
+        <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/fragment_picture.xml" value="0.24547101449275363" />
+        <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/fragment_register.xml" value="0.24547101449275363" />
         <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/layout/picture_fragment.xml" value="0.24547101449275363" />
+        <entry key="..\:/Documents/Bureau/ISEN/Android/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
