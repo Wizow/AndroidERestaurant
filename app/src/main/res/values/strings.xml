@@ -3,4 +3,5 @@
     <string name="home_starter">Entrées</string>
     <string name="home_main_dishes">Plats</string>
     <string name="home_dessert">Desserts</string>
+    <string name="error">Erreur de saisie</string>
 </resources>
